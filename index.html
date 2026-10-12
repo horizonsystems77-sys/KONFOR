@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>KONFOR</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@200;300;400&family=Tajawal:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f0e4;--bg2:#efe6d3;--tx:#3b3226;--mu:#8a7c68;--gold:#b08f55;--ac:#b08f55}
+*{margin:0;padding:0;box-sizing:inherit}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--tx);font-family:Jost,Tajawal,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Tajawal,serif;font-weight:300;letter-spacing:.01em}
+:lang(ar) h1,:lang(ar) h2,:lang(ar) h3{font-family:Tajawal,serif;font-weight:300}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+nav{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 5vw;background:#f6f0e4e6;backdrop-filter:blur(10px);border-bottom:1px solid #b08f5530}
+.logo{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:300;letter-spacing:.28em;font-size:20px}
+.links{display:flex;gap:26px;font-size:14px;letter-spacing:.04em}.links a{opacity:.75;transition:.3s}.links a:hover{opacity:1;color:var(--gold)}
+.lang{display:flex;gap:4px}.lang button{font-size:12px;padding:5px 9px;border-radius:99px;border:1px solid transparent;opacity:.7}.lang button.on{border-color:var(--gold);color:var(--gold);opacity:1}
+@media(max-width:860px){.links{display:none}}
+.hero{min-height:100vh;padding:110px 5vw 60px;display:grid;grid-template-columns:1fr 1.15fr;gap:5vw;align-items:center;position:relative;overflow:hidden;background:radial-gradient(900px 500px at 70% 30%,#fbf7ef,var(--bg))}
+.hero::before{content:"";position:absolute;width:620px;height:620px;inset-inline-start:-200px;bottom:-240px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg fill='none' stroke='%23b08f55' stroke-opacity='.25'%3E%3Cpath id='p' d='M0-4C-15-16-14-36 0-46C14-36 15-16 0-4Z'/%3E%3Cpath d='M0-4C-15-16-14-36 0-46C14-36 15-16 0-4Z' transform='rotate(72)'/%3E%3Cpath d='M0-4C-15-16-14-36 0-46C14-36 15-16 0-4Z' transform='rotate(144)'/%3E%3Cpath d='M0-4C-15-16-14-36 0-46C14-36 15-16 0-4Z' transform='rotate(216)'/%3E%3Cpath d='M0-4C-15-16-14-36 0-46C14-36 15-16 0-4Z' transform='rotate(288)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero>*{position:relative}
+.k{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;animation:up 1s .2s both}
+.hero h1{font-size:clamp(34px,5vw,68px);line-height:1.15;animation:up 1s .4s both}
+.hero p.s{margin:22px 0 34px;max-width:440px;color:var(--mu);line-height:1.9;font-size:16px;animation:up 1s .7s both}
+.btn{display:inline-block;padding:13px 34px;border:1px solid var(--gold);color:var(--gold);letter-spacing:.12em;font-size:13px;transition:.4s;animation:up 1s .9s both}.btn:hover{background:var(--gold);color:#fff}
+.frame{aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid #b08f5560;box-shadow:0 30px 60px -30px #6b563333;background:#e9dfcc;animation:up 1.2s .5s both}
+.frame iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+section.sec{padding:90px 5vw 30px;--ac:var(--gold)}
+.sh{margin-bottom:26px;border-inline-start:2px solid var(--ac);padding-inline-start:18px}
+.sh h2{font-size:clamp(30px,4vw,48px);color:var(--ac)}.sh p{color:var(--mu);margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.chips button{padding:7px 18px;font-size:13px;border:1px solid #b08f5550;border-radius:99px;transition:.3s}
+.chips button.on,.chips button:hover{background:var(--ac);border-color:var(--ac);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:26px}
+.card{background:#fffaf2;border-radius:4px;overflow:hidden;border-bottom:2px solid var(--ac);box-shadow:0 14px 30px -22px #5a45281f;transition:transform .5s,box-shadow .5s}
+.card:hover{transform:translateY(-6px);box-shadow:0 26px 40px -24px #5a452840}
+.cv{position:relative;display:block;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
+.cv img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}.card:hover .cv img{transform:scale(1.07)}
+.bd{position:absolute;inset-block-end:10px;inset-inline-start:10px;background:#fffaf2e8;color:var(--ac);font-size:11px;letter-spacing:.08em;padding:4px 11px;border-radius:99px}
+.info{padding:18px 20px 22px}.info h3{font-size:25px;color:var(--tx)}.info .d{margin-top:8px;color:var(--mu);font-size:14px;line-height:1.75;min-height:3.4em}
+.info .z{margin-top:6px;font-size:12px;color:var(--ac);letter-spacing:.05em}
+.info .pr{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.1em;padding:7px 16px;border:1px solid var(--ac);color:var(--ac);transition:.3s}.info .pr:hover{background:var(--ac);color:#fff}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+#pages{margin-top:90px;padding:80px 5vw;background:var(--bg2);text-align:center}
+#pages h2{font-size:clamp(28px,4vw,44px);color:var(--gold)}#pages>p{color:var(--mu);margin:10px 0 36px}
+.soc{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}.soc a{padding:12px 26px;border:1px solid #b08f5560;letter-spacing:.1em;font-size:13px;transition:.4s}.soc a:hover{background:var(--gold);color:#fff;transform:translateY(-3px)}
+.tel{display:block;margin-top:36px;font-size:26px;letter-spacing:.14em;color:var(--gold);direction:ltr}
+footer{padding:30px;text-align:center;font-size:12px;color:var(--mu);letter-spacing:.1em}
+#lb{position:fixed;inset:0;z-index:50;background:#2b2418ee;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px}#lb.on{display:flex;animation:up .4s both}
+#lb .m{position:relative;max-width:min(1000px,92vw);max-height:68vh;display:flex;align-items:center}#lb .m img{max-width:100%;max-height:68vh;border-radius:3px}
+#lb .t{color:#f6f0e4;text-align:center}#lb .t b{font-family:'Cormorant Garamond',Tajawal,serif;font-weight:300;font-size:26px;display:block}#lb .t span{font-size:13px;opacity:.7}
+.ar2{position:absolute;top:50%;translate:0 -50%;width:42px;height:42px;border-radius:50%;background:#fffaf2d0;color:#3b3226;font-size:20px}#pv{left:-18px}#nx{right:-18px}
+#cl{position:absolute;top:18px;inset-inline-end:22px;color:#f6f0e4;font-size:34px}
+.th{display:flex;gap:8px;overflow-x:auto;max-width:92vw;padding:4px}.th img{height:54px;border-radius:2px;opacity:.5;cursor:pointer;transition:.3s}.th img.on{opacity:1;outline:1px solid var(--gold)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+#mb{display:none;width:38px;height:38px;font-size:22px;color:var(--gold)}
+#vm{position:fixed;bottom:18px;inset-inline-start:18px;z-index:40;background:var(--gold);color:#fff;font-size:13px;letter-spacing:.06em;padding:11px 20px;border-radius:99px;box-shadow:0 10px 24px -10px #5a4528aa;transition:.3s}#vm:hover{transform:translateY(-2px)}
+.links.open{display:flex!important;position:absolute;top:100%;inset-inline:0;flex-direction:column;gap:16px;padding:20px 5vw;background:#f6f0e5;border-bottom:1px solid #b08f5530}
+@media(max-width:860px){#mb{display:block}.links:not(.open){display:none!important}#vm{display:none}nav{padding:12px 16px;gap:8px}.logo{font-size:16px;letter-spacing:.18em}.lang button{padding:4px 7px}.hero{padding:96px 20px 40px}section.sec{padding:70px 20px 20px}#pages{padding:60px 20px}.grid{grid-template-columns:1fr}}
+html.mob{background:#d9cdb6}
+html.mob body{max-width:430px;margin:0 auto;background:var(--bg);box-shadow:0 0 0 1px #b08f5540,0 0 80px #0003}
+html.mob nav{left:50%;right:auto;width:430px;max-width:100%;translate:-50% 0;padding:12px 16px;gap:8px}
+html.mob .logo{font-size:16px;letter-spacing:.18em}html.mob .lang button{padding:4px 7px}
+html.mob #mb{display:block}html.mob .links:not(.open){display:none!important}
+html.mob .links.open{left:0;right:0;inset-inline:0;padding:20px 16px}
+html.mob .hero{grid-template-columns:1fr;padding:96px 20px 40px;gap:30px}
+html.mob section.sec{padding:70px 20px 20px}html.mob #pages{padding:60px 20px}html.mob .grid{grid-template-columns:1fr}
+html.mob .tel{font-size:20px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><g id="fl" fill="currentColor"><path id="pt" d="M0-3C-11-11-10-26 0-33C10-26 11-11 0-3Z"/><use href="#pt" transform="rotate(72)"/><use href="#pt" transform="rotate(144)"/><use href="#pt" transform="rotate(216)"/><use href="#pt" transform="rotate(288)"/></g></defs></svg>
+<nav>
+<a href="#top" class="logo"><svg width="34" height="34" viewBox="-36 -36 72 72"><use href="#fl"/></svg><span>KONFOR</span></a>
+<div class="links" id="nv"></div>
+<div class="lang" id="lg"></div><button id="mb" aria-label="menu">☰</button>
+</nav>
+<header class="hero" id="top">
+<div><p class="k" id="hk"></p><h1 id="hh"></h1><p class="s" id="hp"></p><a class="btn" href="#mf" id="hc"></a></div>
+<div class="frame"><iframe loading="lazy" sandbox="allow-scripts" title="KONFOR" srcdoc="&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;title&gt;KONFOR Bed Assembly&lt;/title&gt;
+&lt;style&gt;*{margin:0;box-sizing:border-box}html,body{height:100%;background:#e9dfcc;overflow:hidden;font-family:system-ui}
+#stage{width:1280px;height:720px;position:fixed;left:50%;top:50%;transform-origin:0 0;background:radial-gradient(1000px 560px at 50% 30%,#fbf7ef,#efe5d2 70%,#e6d9c0)}
+#c{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:#fffc;padding:6px 12px;border-radius:99px;color:#6b5636;font:13px system-ui}
+.cap #c{display:none}#c input{width:300px}&lt;/style&gt;&lt;/head&gt;&lt;body class=&quot;cap&quot;&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;svg viewBox=&quot;0 0 1280 720&quot; width=&quot;1280&quot; height=&quot;720&quot;&gt;
+&lt;line x1=&quot;140&quot; y1=&quot;560&quot; x2=&quot;1140&quot; y2=&quot;560&quot; stroke=&quot;#dccdaa&quot; stroke-width=&quot;2&quot;/&gt;
+&lt;ellipse id=&quot;sh&quot; cx=&quot;640&quot; cy=&quot;568&quot; rx=&quot;400&quot; ry=&quot;18&quot; fill=&quot;#b8a173&quot; opacity=&quot;0&quot;/&gt;
+&lt;g id=&quot;legs&quot;&gt;&lt;path d=&quot;M330 500h26l-3 60h-20zM924 500h26l-3 60h-20z&quot; fill=&quot;#a98b5c&quot;/&gt;&lt;/g&gt;
+&lt;g id=&quot;frame&quot;&gt;&lt;rect x=&quot;320&quot; y=&quot;440&quot; width=&quot;640&quot; height=&quot;62&quot; rx=&quot;10&quot; fill=&quot;#d3bf98&quot;/&gt;&lt;rect x=&quot;342&quot; y=&quot;456&quot; width=&quot;596&quot; height=&quot;30&quot; rx=&quot;6&quot; fill=&quot;none&quot; stroke=&quot;#b89968&quot; stroke-width=&quot;2&quot; opacity=&quot;.7&quot;/&gt;&lt;/g&gt;
+&lt;g id=&quot;head&quot;&gt;&lt;rect x=&quot;292&quot; y=&quot;240&quot; width=&quot;48&quot; height=&quot;262&quot; rx=&quot;16&quot; fill=&quot;#b89968&quot;/&gt;&lt;rect x=&quot;298&quot; y=&quot;248&quot; width=&quot;8&quot; height=&quot;246&quot; rx=&quot;4&quot; fill=&quot;#cfb280&quot;/&gt;&lt;g fill=&quot;#a07f4c&quot;&gt;&lt;circle cx=&quot;318&quot; cy=&quot;290&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;318&quot; cy=&quot;340&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;318&quot; cy=&quot;390&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;318&quot; cy=&quot;440&quot; r=&quot;5&quot;/&gt;&lt;/g&gt;&lt;/g&gt;
+&lt;g id=&quot;deck&quot;&gt;&lt;g id=&quot;plate&quot;&gt;&lt;rect x=&quot;340&quot; y=&quot;418&quot; width=&quot;620&quot; height=&quot;22&quot; rx=&quot;4&quot; fill=&quot;#a98b5c&quot;/&gt;&lt;/g&gt;&lt;g id=&quot;spr&quot;&gt;&lt;/g&gt;
+&lt;g id=&quot;foam&quot;&gt;&lt;rect x=&quot;344&quot; y=&quot;354&quot; width=&quot;612&quot; height=&quot;32&quot; rx=&quot;12&quot; fill=&quot;#f1e6cf&quot; stroke=&quot;#e0d0ae&quot; stroke-width=&quot;2&quot;/&gt;&lt;/g&gt;
+&lt;g id=&quot;cover&quot;&gt;&lt;rect x=&quot;342&quot; y=&quot;316&quot; width=&quot;616&quot; height=&quot;40&quot; rx=&quot;18&quot; fill=&quot;#fffaf0&quot; stroke=&quot;#e6d9bd&quot; stroke-width=&quot;2&quot;/&gt;&lt;path d=&quot;M370 336H930&quot; stroke=&quot;#e3d5b5&quot; stroke-width=&quot;2&quot; stroke-dasharray=&quot;8 8&quot;/&gt;&lt;/g&gt;
+&lt;g id=&quot;pil&quot;&gt;&lt;rect x=&quot;372&quot; y=&quot;286&quot; width=&quot;124&quot; height=&quot;34&quot; rx=&quot;17&quot; fill=&quot;#fffdf7&quot; stroke=&quot;#eadfc7&quot; stroke-width=&quot;2&quot;/&gt;&lt;/g&gt;&lt;/g&gt;
+&lt;g id=&quot;pis&quot;&gt;&lt;rect x=&quot;888&quot; y=&quot;470&quot; width=&quot;24&quot; height=&quot;16&quot; rx=&quot;4&quot; fill=&quot;#8c6f45&quot;/&gt;&lt;line id=&quot;pc&quot; stroke=&quot;#8c6f45&quot; stroke-width=&quot;16&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;line id=&quot;pr&quot; stroke=&quot;#f3ead7&quot; stroke-width=&quot;7&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;circle id=&quot;pd&quot; r=&quot;6&quot; fill=&quot;#8c6f45&quot;/&gt;&lt;/g&gt;
+&lt;g id=&quot;logo&quot; fill=&quot;#b08f55&quot;&gt;&lt;g id=&quot;fl&quot; transform=&quot;translate(455 92)&quot;&gt;&lt;/g&gt;&lt;text id=&quot;lt&quot; x=&quot;500&quot; y=&quot;114&quot; font-size=&quot;62&quot; letter-spacing=&quot;7&quot; font-family=&quot;Montserrat,&#x27;Segoe UI&#x27;,Helvetica,Arial,sans-serif&quot;&gt;KONFOR&lt;/text&gt;&lt;/g&gt;
+&lt;text id=&quot;cap&quot; x=&quot;640&quot; y=&quot;660&quot; text-anchor=&quot;middle&quot; fill=&quot;#8c6f45&quot; font-size=&quot;26&quot; letter-spacing=&quot;3&quot; font-family=&quot;Montserrat,&#x27;Segoe UI&#x27;,Helvetica,Arial,sans-serif&quot;&gt;&lt;/text&gt;
+&lt;rect x=&quot;0&quot; y=&quot;714&quot; width=&quot;1280&quot; height=&quot;6&quot; fill=&quot;#e0d2b4&quot;/&gt;&lt;rect id=&quot;bar&quot; y=&quot;714&quot; width=&quot;0&quot; height=&quot;6&quot; fill=&quot;#b08f55&quot;/&gt;
+&lt;/svg&gt;&lt;/div&gt;
+&lt;div id=&quot;c&quot;&gt;&lt;button id=&quot;pb&quot;&gt;Pause&lt;/button&gt;&lt;input id=&quot;sl&quot; type=&quot;range&quot; min=&quot;0&quot; value=&quot;0&quot;&gt;&lt;span id=&quot;lb&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;script&gt;
+const N=150,FPS=30,Q=new URLSearchParams(location.search),S=document.getElementById(&#x27;stage&#x27;),$=s=&gt;document.querySelector(s);
+const cl=(x,a=0,b=1)=&gt;Math.min(b,Math.max(a,x)),sg=(f,a,b)=&gt;cl((f-a)/(b-a)),ea=t=&gt;1-Math.pow(1-t,3),bo=t=&gt;1+2.2*Math.pow(t-1,3)+1.2*Math.pow(t-1,2);
+const fly=(e,dx,dy,a,b,f,bn)=&gt;{const t=sg(f,a,b),k=1-(bn?bo(t):ea(t));e.setAttribute(&#x27;transform&#x27;,`translate(${dx*k} ${dy*k})`);e.style.opacity=cl(t*3)};
+$(&#x27;#fl&#x27;).innerHTML=[0,1,2,3,4].map(i=&gt;`&lt;g class=&quot;pt&quot; transform=&quot;rotate(${i*72})&quot;&gt;&lt;path d=&quot;M0 -4C-15 -16 -14 -36 0 -46C14 -36 15 -16 0 -4Z&quot;/&gt;&lt;path d=&quot;M0 -12V-34&quot; stroke=&quot;#f6efe2&quot; stroke-width=&quot;2.5&quot; fill=&quot;none&quot;/&gt;&lt;/g&gt;`).join(&#x27;&#x27;);
+const pts=[...document.querySelectorAll(&#x27;.pt&#x27;)];
+$(&#x27;#spr&#x27;).innerHTML=Array.from({length:13},(_,i)=&gt;{const x=368+i*48.5;return`&lt;path d=&quot;M${x} 418l12-7-24-7 24-7-24-7 12-7&quot; fill=&quot;none&quot; stroke=&quot;#8c6f45&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot;/&gt;`}).join(&#x27;&#x27;);
+const sp=[...document.querySelectorAll(&#x27;#spr path&#x27;)];
+const CAPS=[[0,&#x27;Legs &amp; frame&#x27;],[24,&#x27;Headboard&#x27;],[42,&#x27;Hydraulic lift&#x27;],[58,&#x27;Spring system&#x27;],[80,&#x27;Comfort layers&#x27;],[112,&#x27;Hydraulic lift opens the storage&#x27;],[132,&#x27;Ready to rest&#x27;]];
+function R(f){f=cl(f,0,N-1);
+pts.forEach((p,i)=&gt;{const t=ea(sg(f,i*2,i*2+14));p.setAttribute(&#x27;transform&#x27;,`rotate(${i*72}) scale(${t})`)});
+$(&#x27;#lt&#x27;).style.opacity=ea(sg(f,8,26));
+$(&#x27;#sh&#x27;).setAttribute(&#x27;opacity&#x27;,.28*sg(f,0,40));
+fly($(&#x27;#legs&#x27;),0,140,0,18,f);fly($(&#x27;#frame&#x27;),0,120,10,32,f);fly($(&#x27;#head&#x27;),-300,0,24,44,f);
+fly($(&#x27;#pis&#x27;),0,120,42,58,f);fly($(&#x27;#plate&#x27;),0,-170,40,56,f);
+sp.forEach((e,i)=&gt;fly(e,0,-230,58+i*1.2,70+i*1.2,f,1));
+fly($(&#x27;#foam&#x27;),0,-170,80,94,f,1);fly($(&#x27;#cover&#x27;),0,-190,90,104,f,1);fly($(&#x27;#pil&#x27;),0,-150,98,111,f,1);
+const A=18*(ea(sg(f,112,126))-ea(sg(f,132,146))),r=A*Math.PI/180;
+$(&#x27;#deck&#x27;).setAttribute(&#x27;transform&#x27;,`rotate(${-A} 340 430)`);
+const B=[900,478],D=[340+560*Math.cos(r),430-560*Math.sin(r)],C=[B[0]+(D[0]-B[0])*.55,B[1]+(D[1]-B[1])*.55];
+const s=(id,a,b)=&gt;{const e=$(id);e.setAttribute(&#x27;x1&#x27;,a[0]);e.setAttribute(&#x27;y1&#x27;,a[1]);e.setAttribute(&#x27;x2&#x27;,b[0]);e.setAttribute(&#x27;y2&#x27;,b[1])};
+s(&#x27;#pc&#x27;,B,C);s(&#x27;#pr&#x27;,C,D);$(&#x27;#pd&#x27;).setAttribute(&#x27;cx&#x27;,D[0]);$(&#x27;#pd&#x27;).setAttribute(&#x27;cy&#x27;,D[1]);
+let c=&#x27;&#x27;;CAPS.forEach(x=&gt;{if(f&gt;=x[0])c=x[1]});$(&#x27;#cap&#x27;).textContent=c;
+$(&#x27;#bar&#x27;).setAttribute(&#x27;width&#x27;,1280*f/(N-1))}
+window.renderFrame=R;window.TOTAL_FRAMES=N;
+function fit(){const k=Q.has(&#x27;capture&#x27;)?1:Math.min(innerWidth/1280,(innerHeight-60)/720);S.style.transform=`scale(${k}) translate(-640px,-360px)`}
+addEventListener(&#x27;resize&#x27;,fit);fit();
+if(Q.has(&#x27;capture&#x27;)){document.body.className=&#x27;cap&#x27;;R(+Q.get(&#x27;frame&#x27;)||0)}else{
+let f=0,p=1,l=performance.now();const sl=$(&#x27;#sl&#x27;),b=$(&#x27;#pb&#x27;),lb=$(&#x27;#lb&#x27;);sl.max=N-1;R(0);
+b.onclick=()=&gt;{p=!p;if(p&amp;&amp;f&gt;=N-1)f=0;b.textContent=p?&#x27;Pause&#x27;:&#x27;Play&#x27;};sl.oninput=()=&gt;{f=+sl.value;R(f)};
+(function L(t){if(p){f=Math.min(N-1,f+(t-l)/1000*FPS);R(f);sl.value=f;if(f&gt;=N-1){f=0}}lb.textContent=Math.round(f)+1+&#x27;/&#x27;+N;l=t;requestAnimationFrame(L)})(l)}
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+"></iframe></div>
+</header>
+<main id="main"></main>
+<section id="pages"><h2 id="pt1"></h2><p id="pt2"></p>
+<div class="soc">
+<a href="https://www.instagram.com/konfor___syria" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a href="https://www.facebook.com/konforsyria" target="_blank" rel="noopener noreferrer">Facebook</a>
+<a href="https://www.youtube.com/@Konforsyria" target="_blank" rel="noopener noreferrer">YouTube</a>
+<a href="https://whatsapp.com/channel/0029VbCspKS9mrGYJzgfpJ1w" target="_blank" rel="noopener noreferrer">WhatsApp Channel</a>
+</div>
+<a class="tel" href="https://wa.me/963991310740" target="_blank" rel="noopener noreferrer">+963 991 310 740</a></section>
+<footer>© KONFOR · ALKURDI GROUP</footer>
+<button id="vm"></button>
+<div id="lb" role="dialog" aria-modal="true"><button id="cl" aria-label="close">×</button>
+<div class="m"><button class="ar2" id="pv" aria-label="prev">‹</button><img id="bi" alt=""><button class="ar2" id="nx" aria-label="next">›</button></div>
+<div class="t"><b id="lt"></b><span id="ld"></span></div><div class="th" id="th"></div></div>
+<script>
+
+const P=[{"s": "mf", "u": "beds", "n": "Lenoy", "i": [0, 1, 2, 3, 4], "a": "مخمل ليلي عميق وأرجل ذهبية وقاعدة تخزين", "e": "Deep midnight velvet, gold legs, storage base", "z": "90×190 → 180×200"}, {"s": "mf", "u": "beds", "n": "Formy", "i": [5, 6, 7], "a": "ألياف خيزران وتطريز فاخر مع قاعدة تخزين", "e": "Bamboo-fibre fabric, fine embroidery, storage base", "z": "90×190 → 160×200"}, {"s": "mf", "u": "beds", "n": "Livia", "i": [8, 9, 10, 11], "a": "تطريز أنيق وأزرار وأرجل ذهبية", "e": "Elegant quilting with gold buttons and legs", "z": "90×190 → 180×200"}, {"s": "mf", "u": "beds", "n": "Estela", "i": [12, 13, 14, 15], "a": "رأسية مقوّسة بخطوط مطرزة وأرجل عالية", "e": "Arched headboard, channel stitching, raised legs", "z": "150×200 → 200×200"}, {"s": "mf", "u": "beds", "n": "Loretta", "i": [16, 17, 18, 19], "a": "تطريز معيّنات وأرجل خشبية أنيقة", "e": "Diamond stitching on elegant wooden legs", "z": "90×190 → 200×200"}, {"s": "mf", "u": "beds", "n": "Norsy", "i": [20, 21, 22, 23], "a": "تنجيد مخطط عميق بطابع هادئ", "e": "Deep channel upholstery, calm sporty look", "z": "90×190 → 200×200"}, {"s": "mf", "u": "mattresses", "n": "Beyond Fresh", "i": [24, 25], "a": "27 سم · كربون نشط · نوابض مغلفة منفصلة", "e": "27 cm · active carbon · individually pocketed springs", "z": "90×190 → 200×200"}, {"s": "mf", "u": "mattresses", "n": "Helsinki", "i": [26, 27], "a": "25 سم · نوابض بخمس مناطق · قماش يتنفس", "e": "25 cm · 5-zone pocket springs · breathable knit", "z": "90×190 → 200×200"}, {"s": "mf", "u": "mattresses", "n": "Pure Active", "i": [28, 29], "a": "25 سم · معالج Sanitized · وجهان للاستخدام", "e": "25 cm · Sanitized fabric · two-sided use", "z": "90×190 → 180×200"}, {"s": "mf", "u": "mattresses", "n": "Dream Master", "i": [30, 31], "a": "25 سم · دعم العمود الفقري · قاعدة مانعة للانزلاق", "e": "25 cm · spine support · anti-slip base", "z": "150×200 → 180×200"}, {"s": "mf", "u": "mattresses", "n": "Livia Line", "i": [32], "a": "30 سم · بامبو وريش · نوابض بسبع مناطق", "e": "30 cm · bamboo & feather layer · 7-zone springs", "z": "150×200 → 200×200"}, {"s": "mf", "u": "mattresses", "n": "Norsy Mattress", "i": [33], "a": "22 سم · نوابض بونيل فولاذية", "e": "22 cm · heat-treated Bonnel steel springs", "z": "90×190 → 180×200"}, {"s": "home", "u": "bedroom", "n": "Loan", "i": [34, 35, 36, 37], "a": "بلوط طبيعي وأدراج بدون مقابض", "e": "Natural oak, handle-free drawers", "z": ""}, {"s": "home", "u": "bedroom", "n": "Furion", "i": [38, 39, 40], "a": "جوز دافئ وأسود كلاسيكي", "e": "Warm walnut meets classic black", "z": ""}, {"s": "home", "u": "bedroom", "n": "Basalto", "i": [41, 42, 43, 44, 45], "a": "ملمس ناعم وبريق زجاجي", "e": "Soft surfaces, glassy shimmer", "z": ""}, {"s": "home", "u": "bedroom", "n": "Espanse", "i": [46, 47, 48], "a": "خشب طبيعي ومقابض برونزية", "e": "Natural wood, bronze square handles", "z": ""}, {"s": "home", "u": "bedroom", "n": "Nora", "i": [49, 50, 51, 52, 53], "a": "مرآة دائرية وتخزين ذكي", "e": "Round mirror, smart storage", "z": ""}, {"s": "home", "u": "bedroom", "n": "Flemens", "i": [54, 55, 56, 57, 58], "a": "دفء الخشب الطبيعي", "e": "Calm, deep natural wood", "z": ""}, {"s": "home", "u": "bedroom", "n": "Falcon", "i": [59, 60, 61, 62], "a": "بيج خشبي وزجاج دخاني", "e": "Wood-grain beige, smoked glass", "z": ""}, {"s": "home", "u": "bedroom", "n": "Boho", "i": [63, 64, 65, 66], "a": "لوح رأس مستدير بروح بوهيمية", "e": "Rounded headboard, boho spirit", "z": ""}, {"s": "home", "u": "bedroom", "n": "Oliver", "i": [67, 68, 69, 70, 71], "a": "ترافرتين وإضاءة جانبية", "e": "Travertine tops, bedside lighting", "z": ""}, {"s": "home", "u": "bedroom", "n": "Ligero", "i": [72, 73, 74, 75], "a": "تنجيد بيج وأرجل معدنية", "e": "Beige upholstery, metal legs", "z": ""}, {"s": "home", "u": "bedroom", "n": "Alvito", "i": [76, 77, 78, 79, 80], "a": "مرآة ثلاثية برونزية", "e": "Bronze three-piece mirror", "z": ""}, {"s": "home", "u": "bedroom", "n": "Marcus", "i": [81, 82, 83, 84], "a": "بلوط وبيج وأبواب محفورة", "e": "Oak and beige, carved doors", "z": ""}, {"s": "home", "u": "bedroom", "n": "Lithos", "i": [85, 86, 87, 88, 89], "a": "ألوان حيادية هادئة", "e": "Quiet neutral palette", "z": ""}, {"s": "home", "u": "bedroom", "n": "Olenda", "i": [90, 91, 92, 93], "a": "جودة الصناعة التركية", "e": "Turkish craftsmanship, soft-close", "z": ""}, {"s": "home", "u": "bedroom", "n": "Milo", "i": [94, 95], "a": "كريمي وجوز مع جلد قابل للمسح", "e": "Cream and walnut, wipe-clean leather", "z": ""}, {"s": "home", "u": "dining", "n": "Marcus", "i": [96, 97, 98, 99], "a": "خشب بتدرجاته الطبيعية", "e": "Natural wood tones", "z": ""}, {"s": "home", "u": "dining", "n": "Boho", "i": [100, 101, 102, 103, 104], "a": "طاولة خشبية مستديرة · مواد E1", "e": "Round wooden table · E1 certified", "z": ""}, {"s": "home", "u": "dining", "n": "Ligero", "i": [105, 106, 107, 108], "a": "طاولة بيج وكراسي مبطنة", "e": "Beige table, upholstered chairs", "z": ""}, {"s": "home", "u": "dining", "n": "Antigo", "i": [109, 110], "a": "مرآة واسعة وكونسول أنيق", "e": "Wide mirror, elegant console", "z": ""}, {"s": "home", "u": "dining", "n": "Flemens", "i": [111, 112, 113, 114], "a": "أبواب أكورديون وأرجل نصف معدنية", "e": "Accordion doors, half-metal legs", "z": ""}, {"s": "home", "u": "dining", "n": "Alvito", "i": [115, 116, 117, 118], "a": "برونز ومرآة هندسية", "e": "Bronze details, geometric mirror", "z": ""}, {"s": "home", "u": "dining", "n": "Furion", "i": [119, 120, 121, 122], "a": "أسود كلاسيكي بنقش الجوز", "e": "Classic black, walnut grain", "z": ""}, {"s": "home", "u": "dining", "n": "Olenda", "i": [123, 124, 125, 126], "a": "طاولة ثابتة أو قابلة للتمديد", "e": "Fixed or extendable table", "z": ""}, {"s": "home", "u": "sitting", "n": "Mueno", "i": [127, 128, 129, 130], "a": "أريكة استرخاء تتحول إلى سرير", "e": "Relax sofa converting to a bed", "z": ""}, {"s": "home", "u": "sitting", "n": "Jeneva", "i": [131, 132, 133], "a": "بسيط للمساحات الصغيرة", "e": "Simple, made for small spaces", "z": ""}, {"s": "home", "u": "sitting", "n": "Ratte", "i": [134, 135, 136], "a": "كرسي بيرجير ويتحول لسرير", "e": "Berger chair, converts to a bed", "z": ""}, {"s": "home", "u": "sitting", "n": "Hillary", "i": [137, 138, 139, 140], "a": "إسفنج عالي الكثافة ووسائد ملونة", "e": "High-density foam, colourful cushions", "z": ""}, {"s": "home", "u": "tables", "n": "TV Tables", "i": [141, 142, 143, 144], "a": "ستة تصاميم: أنتيغو · ليثوس · بوهو · دافنة · إسبانس · راتي", "e": "Six designs: Antigo · Lithos · Boho · Dafne · Espanse · Ratte", "z": ""}, {"s": "home", "u": "tables", "n": "Coffee & Side Tables", "i": [145, 146, 147, 148, 149, 150], "a": "طاولات قهوة وجانبية بتصاميم متنوعة", "e": "Coffee and side tables in many designs", "z": ""}, {"s": "home", "u": "tables", "n": "Shoe Cabinets", "i": [151, 152], "a": "أدين · لورين · بورتمانتو", "e": "Aden · Loren · hall unit", "z": ""}, {"s": "office", "u": "exec", "n": "Han", "i": [153, 154, 155, 156, 157, 158], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Orven", "i": [159, 160, 161, 162, 163, 164], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Chance", "i": [165, 166, 167, 168, 169, 170], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Ritim", "i": [171, 172, 173, 174, 175, 176], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Efor", "i": [177, 178, 179, 180, 181, 182], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Ligna", "i": [183, 184, 185, 186, 187, 188], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Alpi X", "i": [189, 190, 191, 192, 193, 194], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Ares", "i": [195, 196, 197, 198, 199, 200], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Exen", "i": [201, 202, 203, 204, 205, 206], "a": "", "e": "", "z": ""}, {"s": "office", "u": "exec", "n": "Yalin", "i": [207, 208, 209, 210, 211, 212], "a": "", "e": "", "z": ""}, {"s": "office", "u": "work", "n": "Ritim", "i": [213, 214, 215, 216, 217, 218], "a": "", "e": "", "z": ""}, {"s": "office", "u": "work", "n": "Exen", "i": [219, 220, 221, 222, 223, 224], "a": "", "e": "", "z": ""}, {"s": "office", "u": "work", "n": "Soft", "i": [225, 226, 227, 228, 229], "a": "", "e": "", "z": ""}, {"s": "office", "u": "work", "n": "Trend", "i": [230, 231, 232, 233, 234, 235], "a": "", "e": "", "z": ""}, {"s": "office", "u": "ops", "n": "Ritim", "i": [236, 237, 238, 239, 240, 241], "a": "", "e": "", "z": ""}, {"s": "office", "u": "ops", "n": "Exen", "i": [242, 243, 244, 245, 246, 247], "a": "", "e": "", "z": ""}, {"s": "office", "u": "ops", "n": "Trend", "i": [248, 249, 250, 251, 252, 253], "a": "", "e": "", "z": ""}, {"s": "office", "u": "meet", "n": "Carina · Ritim", "i": [254, 255, 256, 257, 258, 259], "a": "", "e": "", "z": ""}, {"s": "office", "u": "meet", "n": "Alpi X · Trend · Efor", "i": [260, 261, 262, 263, 264, 265], "a": "", "e": "", "z": ""}, {"s": "office", "u": "recep", "n": "Cool", "i": [266, 267, 268, 269, 270, 271], "a": "", "e": "", "z": ""}, {"s": "office", "u": "recep", "n": "Lotus", "i": [272, 273, 274, 275, 276, 277], "a": "", "e": "", "z": ""}, {"s": "office", "u": "store", "n": "Cabinets & Lockers", "i": [278, 279, 280, 281, 282, 283], "a": "", "e": "", "z": ""}, {"s": "office", "u": "store", "n": "Nice Storage", "i": [284, 285, 286, 287, 288, 289], "a": "", "e": "", "z": ""}, {"s": "office", "u": "school", "n": "Exen School Desks", "i": [290, 291, 292, 293], "a": "", "e": "", "z": ""}, {"s": "office", "u": "seat", "n": "Alpi X Armchairs", "i": [294, 295, 296, 297], "a": "", "e": "", "z": ""}, {"s": "office", "u": "seat", "n": "Efor Armchairs", "i": [298, 299, 300, 301], "a": "", "e": "", "z": ""}, {"s": "office", "u": "seat", "n": "Ritim Armchairs", "i": [302, 303, 304, 305], "a": "", "e": "", "z": ""}, {"s": "office", "u": "seat", "n": "Yalin Armchairs", "i": [306, 307, 308], "a": "", "e": "", "z": ""}, {"s": "office", "u": "seat", "n": "Nice Separators", "i": [309, 310, 311, 312, 313, 314], "a": "", "e": "", "z": ""}];
+const T={
+ar:{nav:['الرئيسية','المفروشات','الأثاث المنزلي','الأثاث المكتبي','صفحاتنا'],hk:'منذ 1978',hh:'راحةٌ تُصنع بشغف،<br>وتصاميم تُلهم بيتك.',hp:'أثاث تركي فاخر لغرف النوم والجلوس والمكاتب، بتفاصيل هادئة وجودة تدوم.',hc:'اكتشف المجموعات',
+sec:{mf:['المفروشات','أسرّة ومراتب لنوم متوازن'],home:['الأثاث المنزلي','غرف نوم وسفرة وجلوس وطاولات'],office:['الأثاث المكتبي','مكاتب تنفيذية وأنظمة عمل واستقبال']},
+sub:{all:'الكل',beds:'الأسرّة',mattresses:'المراتب',bedroom:'غرف النوم',dining:'غرف السفرة',sitting:'طقم الجلوس',tables:'طاولات وخزائن',exec:'مكاتب تنفيذية',work:'أنظمة العمل',ops:'أنظمة تشغيلية',meet:'اجتماعات',recep:'استقبال',store:'خزائن وتخزين',school:'مقاعد دراسية',seat:'كراسي وفواصل'},
+od:'مجموعة مكتبية بخامات متينة وألوان متعددة ومقاسات متنوعة.',ph:'صور',pr:'السعر عند الطلب',pt:'صفحاتنا',pp:'تابعنا وتواصل معنا',close:'إغلاق',vm:['عرض الموبايل','عرض الكمبيوتر']},
+en:{nav:['Home','Bedding','Home Furniture','Office Furniture','Our Pages'],hk:'Since 1978',hh:'Comfort crafted with passion,<br>designs that inspire your home.',hp:'Premium Turkish furniture for bedrooms, living and working spaces — quiet details, lasting quality.',hc:'Discover the collections',
+sec:{mf:['Bedding','Beds & mattresses for balanced sleep'],home:['Home Furniture','Bedrooms, dining, living & tables'],office:['Office Furniture','Executive desks, work systems & reception']},
+sub:{all:'All',beds:'Beds',mattresses:'Mattresses',bedroom:'Bedrooms',dining:'Dining rooms',sitting:'Sitting rooms',tables:'Tables & cabinets',exec:'Executive',work:'Work systems',ops:'Operational',meet:'Meeting',recep:'Reception',store:'Storage',school:'School desks',seat:'Seating & separators'},
+od:'Office collection in durable finishes, many colours and sizes.',ph:'photos',pr:'Price on request',pt:'Our Pages',pp:'Follow us and get in touch',close:'Close',vm:['Mobile view','Desktop view']},
+tr:{nav:['Ana Sayfa','Yatak & Baza','Ev Mobilyası','Ofis Mobilyası','Sayfalarımız'],hk:'1978\'den beri',hh:'Tutkuyla üretilen konfor,<br>evinize ilham veren tasarımlar.',hp:'Yatak odası, oturma ve çalışma alanları için seçkin Türk mobilyası — sakin detaylar, kalıcı kalite.',hc:'Koleksiyonları keşfedin',
+sec:{mf:['Yatak & Baza','Dengeli uyku için baza ve yataklar'],home:['Ev Mobilyası','Yatak odası, yemek, oturma ve sehpalar'],office:['Ofis Mobilyası','Yönetici masaları, çalışma sistemleri, resepsiyon']},
+sub:{all:'Tümü',beds:'Bazalar',mattresses:'Yataklar',bedroom:'Yatak odaları',dining:'Yemek odaları',sitting:'Oturma grupları',tables:'Sehpa & dolaplar',exec:'Yönetici',work:'Çalışma sistemleri',ops:'Operasyonel',meet:'Toplantı',recep:'Resepsiyon',store:'Depolama',school:'Okul sıraları',seat:'Koltuk & separatör'},
+od:'Dayanıklı malzeme, çok renk ve ölçü seçenekli ofis koleksiyonu.',ph:'fotoğraf',pr:'Fiyat için ulaşın',pt:'Sayfalarımız',pp:'Bizi takip edin, bize ulaşın',close:'Kapat',vm:['Mobil görünüm','Masaüstü görünüm']},
+fr:{nav:['Accueil','Literie','Mobilier maison','Mobilier bureau','Nos pages'],hk:'Depuis 1978',hh:'Le confort façonné avec passion,<br>des créations qui inspirent votre foyer.',hp:'Mobilier turc haut de gamme pour chambres, salons et bureaux — détails discrets, qualité durable.',hc:'Découvrir les collections',
+sec:{mf:['Literie','Lits et matelas pour un sommeil équilibré'],home:['Mobilier maison','Chambres, salles à manger, salons et tables'],office:['Mobilier bureau','Bureaux de direction, postes de travail, accueil']},
+sub:{all:'Tout',beds:'Lits',mattresses:'Matelas',bedroom:'Chambres',dining:'Salles à manger',sitting:'Salons',tables:'Tables & meubles',exec:'Direction',work:'Postes de travail',ops:'Opérationnel',meet:'Réunion',recep:'Accueil',store:'Rangement',school:'Pupitres',seat:'Fauteuils & cloisons'},
+od:'Collection de bureau aux finitions durables, nombreux coloris et dimensions.',ph:'photos',pr:'Prix sur demande',pt:'Nos pages',pp:'Suivez-nous et contactez-nous',close:'Fermer',vm:['Vue mobile','Vue bureau']}};
+const SUBS={mf:['beds','mattresses'],home:['bedroom','dining','sitting','tables'],office:['exec','work','ops','meet','recep','store','school','seat']};
+const COL={mf:'#1f8f80',home:'#a9764a',office:'#5f7480'};
+let L=localStorage.getItem('kl')||'ar',F={mf:'all',home:'all',office:'all'},cur=null,ix=0;
+try{L=localStorage.getItem('kl')||'ar'}catch(e){}
+if(!T[L])L='ar';
+const $=i=>document.getElementById(i),el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const tb=i=>'images/t/'+i+'.webp',fl=i=>'images/f/'+i+'.webp';
+function draw(){
+ const t=T[L];document.documentElement.lang=L;document.documentElement.dir=L==='ar'?'rtl':'ltr';
+ $('hk').textContent=t.hk;$('hh').innerHTML=t.hh;$('hp').textContent=t.hp;$('hc').textContent=t.hc;$('pt1').textContent=t.pt;$('pt2').textContent=t.pp;
+ const nv=$('nv');nv.replaceChildren();[['#top',0],['#mf',1],['#home',2],['#office',3],['#pages',4]].forEach(([h,i])=>{const a=el('a','',t.nav[i]);a.href=h;nv.append(a)});
+ const lg=$('lg');lg.replaceChildren();['ar','en','tr','fr'].forEach(k=>{const b=el('button',k===L?'on':'',k.toUpperCase());b.onclick=()=>{L=k;try{localStorage.setItem('kl',k)}catch(e){}draw()};lg.append(b)});
+ const m=$('main');m.replaceChildren();
+ ['mf','home','office'].forEach(s=>{
+  const sc=el('section','sec');sc.id=s;sc.style.setProperty('--ac',COL[s]);
+  const h=el('div','sh rv');h.append(el('h2','',t.sec[s][0]),el('p','',t.sec[s][1]));sc.append(h);
+  const ch=el('div','chips rv');['all',...SUBS[s]].forEach(u=>{const b=el('button',F[s]===u?'on':'',t.sub[u]);b.onclick=()=>{F[s]=u;draw()};ch.append(b)});sc.append(ch);
+  const g=el('div','grid');
+  P.filter(p=>p.s===s&&(F[s]==='all'||p.u===F[s])).forEach((p,n)=>{
+   const c=el('article','card rv');c.style.transitionDelay=(n%4)*80+'ms';
+   const cv=el('button','cv');cv.setAttribute('aria-label',p.n);const im=el('img');im.src=tb(p.i[0]);im.width=440;im.height=330;im.alt=p.n;im.loading='lazy';im.decoding='async';cv.append(im,el('span','bd',p.i.length+' '+t.ph));cv.onclick=()=>open(p);
+   const f=el('div','info');f.append(el('h3','',p.n),el('p','d',s==='office'?t.od:(L==='ar'?p.a:p.e)));if(p.z)f.append(el('p','z',p.z));
+   const pr=el('a','pr',t.pr);pr.href='https://wa.me/963991310740?text='+encodeURIComponent(p.n);pr.target='_blank';pr.rel='noopener noreferrer';f.append(pr);
+   c.append(cv,f);g.append(c)});
+  sc.append(g);m.append(sc)});
+ $('vm').textContent=t.vm[document.documentElement.classList.contains('mob')?1:0];io()}
+function io(){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(e=>o.observe(e))}
+function open(p){cur=p;ix=0;$('lt').textContent=p.n;$('ld').textContent=L==='ar'?p.a:p.e;const th=$('th');th.replaceChildren();p.i.forEach((id,k)=>{const i=el('img');i.src=tb(id);i.alt='';i.loading='lazy';i.onclick=()=>show(k);th.append(i)});show(0);$('lb').classList.add('on');document.body.style.overflow='hidden'}
+function show(k){ix=(k+cur.i.length)%cur.i.length;$('bi').src=fl(cur.i[ix]);new Image().src=fl(cur.i[(ix+1)%cur.i.length]);$('bi').alt=cur.n;[...$('th').children].forEach((e,j)=>e.classList.toggle('on',j===ix))}
+function shut(){$('lb').classList.remove('on');document.body.style.overflow=''}
+$('cl').onclick=shut;$('pv').onclick=()=>show(ix-1);$('nx').onclick=()=>show(ix+1);
+$('lb').onclick=e=>{if(e.target.id==='lb')shut()};
+addEventListener('keydown',e=>{if(!$('lb').classList.contains('on'))return;if(e.key==='Escape')shut();if(e.key==='ArrowRight')show(ix+(document.dir==='rtl'?-1:1));if(e.key==='ArrowLeft')show(ix+(document.dir==='rtl'?1:-1))});
+$('vm').onclick=()=>{document.documentElement.classList.toggle('mob');scrollTo(0,0);draw()};
+$('mb').onclick=()=>$('nv').classList.toggle('open');
+$('nv').onclick=e=>{if(e.target.tagName==='A')$('nv').classList.remove('open')};
+draw();
+</script>
+</body>
+</html>
